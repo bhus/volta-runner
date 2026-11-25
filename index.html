@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>VOLTA RUNNER — Lode × Conan × Mega Man × Bolo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="cabinet">
+    <header id="marquee">
+      <div class="title-group">
+        <h1>VOLTA RUNNER</h1>
+        <span class="subtitle">LODE RUNNER × CONAN × MEGA MAN × BOLO</span>
+      </div>
+      <div class="toolbar">
+        <button id="btn-pad" class="chip" title="Toggle On-Screen Touch Gamepad">PAD</button>
+        <button id="btn-pause" class="chip" title="Pause / Resume (P)">PAUSE</button>
+        <button id="btn-crt" class="chip active" title="Toggle CRT Scanlines">CRT: ON</button>
+        <button id="btn-music" class="chip active" title="Toggle Chiptune Music (M)">MUSIC: ON</button>
+        <button id="btn-sfx" class="chip active" title="Toggle Sound FX">SFX: ON</button>
+        <button id="btn-restart" class="chip" title="Restart Chamber (R)">RESTART</button>
+      </div>
+    </header>
+
+    <div id="screen-bezel">
+      <canvas id="game-canvas" width="800" height="524"></canvas>
+      <div id="crt-overlay" class="crt-on"></div>
+    </div>
+
+    <!-- Mobile / Touch Virtual Gamepad -->
+    <div id="touch-pad" aria-label="Touch Gamepad">
+      <div class="pad-left">
+        <div class="dpad">
+          <button class="tbtn dpad-up" data-action="up" aria-label="Up">▲</button>
+          <button class="tbtn dpad-left" data-action="left" aria-label="Left">◄</button>
+          <div class="dpad-center"></div>
+          <button class="tbtn dpad-right" data-action="right" aria-label="Right">►</button>
+          <button class="tbtn dpad-down" data-action="down" aria-label="Down">▼</button>
+        </div>
+        <div class="dig-row">
+          <button class="tbtn btn-dig" data-action="digLeft">DIG L</button>
+          <button class="tbtn btn-dig" data-action="digRight">DIG R</button>
+        </div>
+      </div>
+
+      <div class="pad-right">
+        <div class="action-row">
+          <button class="tbtn btn-axe" data-action="axe">AXE</button>
+          <button class="tbtn btn-bolo" data-action="bolo">BOLO</button>
+          <button class="tbtn btn-slide" data-action="slide">SLIDE</button>
+        </div>
+        <div class="action-row primary-row">
+          <button class="tbtn btn-buster" data-action="shoot">BUSTER<small>HOLD</small></button>
+          <button class="tbtn btn-jump" data-action="jump">JUMP</button>
+        </div>
+      </div>
+    </div>
+
+    <footer id="controls-bar">
+      <div class="ctrl"><kbd>A</kbd><kbd>D</kbd> / <kbd>←</kbd><kbd>→</kbd> Move</div>
+      <div class="ctrl"><kbd>W</kbd><kbd>S</kbd> / <kbd>↑</kbd><kbd>↓</kbd> Climb</div>
+      <div class="ctrl"><kbd>SPACE</kbd> Jump / Vault</div>
+      <div class="ctrl"><kbd>SHIFT</kbd> Mega Slide</div>
+      <div class="ctrl"><kbd>J</kbd> / <kbd>X</kbd> Buster (Hold=Charge)</div>
+      <div class="ctrl"><kbd>K</kbd> / <kbd>V</kbd> Conan Axe</div>
+      <div class="ctrl"><kbd>Q</kbd><kbd>E</kbd> / <kbd>Z</kbd><kbd>C</kbd> Dig L/R</div>
+      <div class="ctrl"><kbd>L</kbd> / <kbd>B</kbd> Bolo Mortar</div>
+      <div class="ctrl"><kbd>P</kbd> Pause · <kbd>R</kbd> Retry · <kbd>1-5</kbd> Chamber</div>
+    </footer>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
